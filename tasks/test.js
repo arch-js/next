@@ -4,5 +4,5 @@
 */
 
 export default function test(gulp, plugins) {
-  gulp.task('test', ['lint', 'mocha']);
+  gulp.task('test', ['lint', 'unit']);
 }

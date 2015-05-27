@@ -3,8 +3,8 @@
   gulp task for bundling src into lib
 */
 
-export default function bundle(gulp, plugins) {
-  gulp.task('bundle', () => {
+export default function build(gulp, plugins) {
+  gulp.task('build', () => {
     let { babel } = plugins;
     return gulp.src('src/**/*.js')
       .pipe(babel())

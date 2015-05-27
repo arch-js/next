@@ -13,4 +13,4 @@ find
     task(gulp, plugins);
   });
 
-gulp.task('default', ['test', 'bundle']);
+gulp.task('default', ['test', 'build']);

@@ -6,7 +6,8 @@
 export default function lint(gulp, plugins) {
   gulp.task('lint', () => {
     let { eslint } = plugins;
-    return gulp.src('.')
-      .pipe(eslint());
+    return gulp.src('**/*.js')
+      .pipe(eslint())
+      .pipe(eslint.format());
   });
 }
