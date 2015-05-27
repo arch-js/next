@@ -1,5 +1,5 @@
 /*
-  watch.js
+  tasks/watch.js
   gulp task for watching for changes and linting/running tests
 */
 

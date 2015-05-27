@@ -1,5 +1,5 @@
 /*
-  bundle.js
+  tasks/bundle.js
   gulp task for bundling src into lib
 */
 

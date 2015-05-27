@@ -1,5 +1,5 @@
 /*
-  test.js
+  tasks/test.js
   gulp task for running unit tests and linting
 */
 

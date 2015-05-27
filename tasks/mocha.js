@@ -1,5 +1,5 @@
 /*
-  unit.js
+  tasks/unit.js
   gulp task for running unit tests via mocha
 */
 

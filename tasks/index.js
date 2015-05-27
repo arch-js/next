@@ -1,3 +1,8 @@
+/*
+  tasks/index.js
+  gulp task initialiser, loading other gulp tasks in this directory
+*/
+
 import find from 'find';
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';

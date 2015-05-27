@@ -1,5 +1,5 @@
 /*
-  lint.js
+  tasks/lint.js
   gulp task for running eslint
 */
 
