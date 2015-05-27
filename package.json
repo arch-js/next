@@ -1,0 +1,39 @@
+{
+  "name": "arch-nemesis",
+  "version": "0.0.0",
+  "description": "ES6 fork of Arch (React UI framework)",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/tabazevedo/arch-nemesis"
+  },
+  "keywords": [
+    "arch",
+    "arch-nemesis",
+    "immutable",
+    "react"
+  ],
+  "author": "Tiago Azevedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tabazevedo/arch-nemesis/issues"
+  },
+  "homepage": "https://github.com/tabazevedo/arch-nemesis",
+  "devDependencies": {
+    "babel": "^5.4.3",
+    "babel-eslint": "^3.1.7",
+    "chai": "^2.3.0",
+    "eslint": "^0.21.2",
+    "find": "^0.2.2",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-eslint": "^0.12.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-mocha": "^2.0.1",
+    "gulp-util": "^3.0.4"
+  },
+  "dependencies": {}
+}
