@@ -1,3 +1,8 @@
+/*
+  spec/unit/client/module.js
+  spec for src/client/index.js
+*/
+
 import client from '../../../src/client';
 import { assert } from 'chai';
 

@@ -1,3 +1,8 @@
+/*
+  spec/unit/server/module.js
+  spec for src/server/index.js
+*/
+
 import server from '../../../src/server';
 import { assert } from 'chai';
 
