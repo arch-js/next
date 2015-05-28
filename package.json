@@ -36,5 +36,7 @@
     "gulp-mocha": "^2.0.1",
     "gulp-util": "^3.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ancient-oak": "^0.3.4"
+  }
 }

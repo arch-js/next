@@ -1,6 +1,6 @@
 /*
-  tasks/bundle.js
-  gulp task for bundling src into lib
+  tasks/build.js
+  gulp task for transpiling src to lib (babel)
 */
 
 export default function build(gulp, plugins) {
