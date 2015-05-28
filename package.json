@@ -1,7 +1,7 @@
 {
   "name": "arch-nemesis",
   "version": "0.0.1",
-  "description": "ES6 fork of Arch (React UI framework)",
+  "description": "ES6 fork of Arch (React Application framework)",
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/gulp test"
