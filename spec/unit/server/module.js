@@ -12,7 +12,6 @@ describe('Server module', () => {
     assert.isObject(server);
   });
 
-  it('includes server and shared modules', () => {
-    assert.isDefined(server.cursor);
+  xit('includes server and shared modules', () => {
   });
 });
