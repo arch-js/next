@@ -1,40 +1,40 @@
 {
-  "name": "arch-nemesis",
+  "name": "arch-next",
   "version": "0.0.1",
-  "description": "ES6 fork of Arch (React Application framework)",
+  "description": "",
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/tabazevedo/arch-nemesis"
+    "url": "http://github.com/tabazevedo/arch-next"
   },
   "keywords": [
     "arch",
-    "arch-nemesis",
+    "arch-next",
     "immutable",
     "react"
   ],
   "author": "Tiago Azevedo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tabazevedo/arch-nemesis/issues"
+    "url": "https://github.com/tabazevedo/arch-next/issues"
   },
-  "homepage": "https://github.com/tabazevedo/arch-nemesis",
+  "homepage": "https://github.com/tabazevedo/arch-next",
   "devDependencies": {
-    "babel": "^5.4.3",
-    "babel-eslint": "^3.1.7",
-    "chai": "^2.3.0",
-    "eslint": "^0.21.2",
-    "find": "^0.2.2",
-    "gulp": "^3.8.11",
-    "gulp-babel": "^5.1.0",
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "chai": "^3.2.0",
+    "eslint": "^1.2.1",
+    "find": "^0.2.3",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
     "gulp-bump": "^0.3.1",
-    "gulp-eslint": "^0.12.0",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-mocha": "^2.0.1",
-    "gulp-util": "^3.0.4"
+    "gulp-eslint": "^1.0.0",
+    "gulp-load-plugins": "^1.0.0-rc",
+    "gulp-mocha": "^2.1.3",
+    "gulp-util": "^3.0.6"
   },
   "dependencies": {
     "ancient-oak": "^0.3.4"
