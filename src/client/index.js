@@ -3,4 +3,4 @@
   the main entrypoint for an arch frontend application
 */
 
-export default { } ;
+export default { };
