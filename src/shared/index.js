@@ -3,4 +3,6 @@
   the main entrypoint for an arch server
 */
 
-export default { };
+import route from './route';
+
+export default { route };

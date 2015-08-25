@@ -13,5 +13,6 @@ describe('Shared module', () => {
   });
 
   xit('includes shared modules', () => {
+    assert.ok(shared.route);
   });
 });
