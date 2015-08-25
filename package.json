@@ -2,8 +2,9 @@
   "name": "arch-next",
   "version": "0.0.1",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/shared/index.js",
   "scripts": {
+    "build": "node --harmony ./node_modules/.bin/gulp",
     "watch": "node --harmony ./node_modules/.bin/gulp watch",
     "test": "node --harmony ./node_modules/.bin/gulp test"
   },
