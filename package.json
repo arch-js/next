@@ -4,6 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
+    "watch": "node --harmony ./node_modules/.bin/gulp watch",
     "test": "node --harmony ./node_modules/.bin/gulp test"
   },
   "repository": {
