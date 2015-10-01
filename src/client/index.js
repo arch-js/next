@@ -3,4 +3,6 @@
   the main entrypoint for an arch frontend application
 */
 
-export default { };
+import shared from '../shared';
+
+export default { ...shared };

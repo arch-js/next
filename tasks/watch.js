@@ -6,6 +6,6 @@
 export default function Watch(gulp, plugins) {
   gulp.task('watch', () => {
     gulp.watch('src/**/*.js', ['build']);
-    gulp.watch(['spec/**/*-test.js', 'src/**/*.js'], ['test']);
+    gulp.watch(['spec/**/*.js', 'src/**/*.js'], ['test']);
   });
 }

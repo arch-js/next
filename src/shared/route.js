@@ -10,7 +10,7 @@ export default function route(match, component) {
     throw new TypeError(match + ' must be a string');
   }
 
-  if ((typeof component !== 'function') || !(component.prototype instanceof React.Component)) {
+  if (typeof component !== 'function' || !component.isReactClass) {
     throw new TypeError(component + ' is not a React Component');
   }
 

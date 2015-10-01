@@ -22,5 +22,7 @@ describe('route', () => {
   it('fails when a component is not passed as second argument', () => {
     const routeFn = () => route('*', 'Bad Wolf');
     assert.throws(routeFn);
+    const routeFn2 = () => route('*', React.DOM.div);
+    assert.throws(routeFn2);
   });
 });

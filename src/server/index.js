@@ -4,5 +4,6 @@
 */
 
 import koa from 'koa';
+import shared from '../shared';
 
-export default { };
+export default { ...shared };

@@ -9,4 +9,4 @@ export default class FakeComponent extends React.Component {
   render() {
     return <span>Hello, world!</span>;
   }
-}
+};

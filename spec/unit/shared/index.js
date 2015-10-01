@@ -6,13 +6,12 @@
 import shared from '../../../src/shared';
 import { assert } from 'chai';
 
-describe('Shared module', () => {
-  it('exports a valid object', () => {
-    assert.ok(shared);
-    assert.isObject(shared);
-  });
+export function assertSharedModule(m) {
+  assert.isObject(m);
+  assert.ok(m.route);
+  assert.ok(m.application);
+};
 
-  xit('includes shared modules', () => {
-    assert.ok(shared.route);
-  });
+describe('Shared modules', () => {
+  it('exports shared modules', () => assertSharedModule(shared));
 });
