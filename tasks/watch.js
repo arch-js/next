@@ -17,7 +17,7 @@ export default function watch(gulp, plugins) {
     });
   }
 
-  gulp.task('watch', () => {
+  gulp.task('watch', ['build', 'lint', 'unit'], () => {
     gulp.watch('src/**/*.js', ['test', 'build']).on('change', clearCache);
     gulp.watch(['spec/**/*.js'], ['test']).on('change', clearCache);
   });
