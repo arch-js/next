@@ -4,6 +4,7 @@
 */
 
 import application from './application';
+import component from './component';
 import route from './route';
 
-export default { application, route };
+export default { application, component, route };

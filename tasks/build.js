@@ -5,8 +5,9 @@
 
 export default function build(gulp, plugins) {
   gulp.task('build', () => {
-    let { babel } = plugins;
+    let { babel, cached } = plugins;
     return gulp.src('src/**/*.js')
+      .pipe(cached('compile'))
       .pipe(babel())
       .pipe(gulp.dest('lib'));
   });
