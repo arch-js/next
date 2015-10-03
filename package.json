@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node --harmony ./node_modules/.bin/gulp",
     "watch": "node --harmony ./node_modules/.bin/gulp watch",
-    "test": "node --harmony ./node_modules/.bin/gulp test"
+    "test": "node --harmony ./node_modules/.bin/gulp test",
+    "docs": "node --harmony ./node_modules/.bin/esdoc -c ./esdoc.json"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
     "babel-eslint": "^4.0.10",
     "babel-runtime": "^5.8.20",
     "chai": "^3.2.0",
+    "esdoc": "^0.3.1",
+    "esdoc-es7-plugin": "0.0.2",
     "eslint": "^1.2.1",
     "find": "^0.2.3",
     "gulp": "^3.9.0",

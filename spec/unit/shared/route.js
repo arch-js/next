@@ -1,13 +1,9 @@
-/*
-  spec/unit/shared/route.js
-  spec for src/shared/route.js
-*/
-
 import { assert } from 'chai';
 import FakeComponent from '../../fixtures/fake-component';
 import React from 'react';
 import route from '../../../src/shared/route';
 
+/** @test {route} */
 describe('route', () => {
   it('returns a valid route definition', () => {
     const routeA = route('*', FakeComponent);

@@ -1,13 +1,9 @@
-/*
-  spec/unit/shared/application.js
-  spec for src/shared/application.js
-*/
-
 import application from '../../../src/shared/application';
 import { assert } from 'chai';
 import React from 'react';
 
-describe('applications', () => {
+/** @test {application} */
+describe('application', () => {
   it('returns a valid application definition', () => {
     const routes = [];
     const start = () => true;
