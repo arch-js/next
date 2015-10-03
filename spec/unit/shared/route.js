@@ -7,7 +7,7 @@ import route from '../../../src/shared/route';
 describe('route', () => {
   it('returns a valid route definition', () => {
     const routeA = route('*', FakeComponent);
-    assert.deepEqual(routeA, ['*', FakeComponent]);
+    assert.deepEqual(routeA, { path: '*', component: FakeComponent });
   });
 
   it('fails when a string is not passed as first argument', () => {

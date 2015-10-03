@@ -16,5 +16,5 @@ export default function(match, component) {
     throw new TypeError(component + ' is not a React Component');
   }
 
-  return [ match, component ];
+  return { path: match, component: component };
 };
