@@ -1,26 +1,16 @@
 import koa from 'koa';
-import koaRouter from 'koa-router';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import router from './middleware/router';
 
 /**
- * Arch server
+ * Instantiate a server given an application.
+ * @param {Application} [application] Application object with at least one route definition
  */
 
 export default function server({ routes }) {
   const app = koa();
 
-  const router = koaRouter();
-
-  routes.forEach(({path, component: Route}) => {
-    router.get(path, function* (next) {
-      this.body = ReactDOMServer.renderToString(<Route />);
-    });
-  });
-
   app
-    .use(router.routes())
-    .use(router.allowedMethods());
+    .use(router(routes))
 
   return app;
 }

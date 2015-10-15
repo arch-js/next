@@ -1,5 +1,3 @@
-import route from './route';
-
 /**
  * Returns a new, registered application object.
  * @param {Array} [routes] - A route-set as defined by routes.
@@ -7,9 +5,10 @@ import route from './route';
  * @return {Object} - Application object
  */
 
-export default function(routes, start) {
+export default function application({routes, getInitialState, start}) {
   return {
-    routes: routes,
-    start: start
-  }
-};
+    getInitialState: (getInitialState ? getInitialState : () => {}),
+    routes,
+    start
+  };
+}

@@ -7,6 +7,6 @@ import React from 'react';
 
 export default class FakeComponent extends React.Component {
   render() {
-    return <span>Hello, world!</span>;
+    return <span>{"Hello, world!"}</span>;
   }
-};
+}
