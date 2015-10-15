@@ -4,10 +4,10 @@
   "description": "",
   "main": "lib/shared/index.js",
   "scripts": {
-    "build": "node --harmony ./node_modules/.bin/gulp",
-    "watch": "node --harmony ./node_modules/.bin/gulp watch",
-    "test": "node --harmony ./node_modules/.bin/gulp test",
-    "docs": "node --harmony ./node_modules/.bin/esdoc -c ./esdoc.json"
+    "build": "gulp",
+    "watch": "gulp watch",
+    "test": "gulp test",
+    "docs": "esdoc -c ./esdoc.json"
   },
   "repository": {
     "type": "git",
