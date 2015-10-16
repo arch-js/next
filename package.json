@@ -1,14 +1,20 @@
 {
   "name": "arch-next",
   "version": "0.0.1",
-  "description": "",
+  "description": "Arch with some bitters and rye.",
   "main": "lib/shared/index.js",
   "scripts": {
     "build": "gulp",
     "watch": "gulp watch",
     "test": "gulp test",
-    "docs": "esdoc -c ./esdoc.json"
+    "docs": "esdoc -c ./esdoc.json",
+    "prepublish": "gulp"
   },
+  "files": [
+    "lib/",
+    "index.js",
+    "server.js"
+  ],
   "repository": {
     "type": "git",
     "url": "http://github.com/tabazevedo/arch-next"
