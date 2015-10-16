@@ -1,4 +1,5 @@
 import React from 'react';
+
 /**
  * Returns an arch route definition
  * @param {String} [match] - URL path to match.
