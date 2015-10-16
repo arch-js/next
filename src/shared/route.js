@@ -1,3 +1,4 @@
+import React from 'react';
 /**
  * Returns an arch route definition
  * @param {String} [match] - URL path to match.
@@ -10,7 +11,7 @@ export default function(match, component) {
     throw new TypeError(match + ' must be a string');
   }
 
-  if (typeof component !== 'function' || !component.isReactClass) {
+  if (!(component.prototype instanceof React.Component)) {
     throw new TypeError(component + ' is not a React Component');
   }
 
