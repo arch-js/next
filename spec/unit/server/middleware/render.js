@@ -22,13 +22,14 @@ describe('Render Middleware', () => {
 
         yield next;
       })
-      .use(render)
-      .use(function* (){
-        assert.match(this.body, /<html><body><script type=\"application\/json\" id=\"myapp-state\">(?:.+)<\/script><div(?:.*)id="myapp"(?:.*)>(?:.*)<\/div><\/body><\/html>/);
-      });
+      .use(render);
 
     request(http.createServer(app.callback()))
       .get('/')
-      .end(done);
+      .end((err, res) => {
+        if (err) throw err;
+        assert.match(res.text, /<html><body><script type=\"application\/json\" id=\"myapp-state\">(?:.+)<\/script><div(?:.*)id="myapp"(?:.*)>(?:.*)<\/div><\/body><\/html>/)
+        done();
+      });
   });
 });
