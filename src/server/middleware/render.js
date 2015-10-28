@@ -10,9 +10,12 @@ export default function* renderMiddleware(next) {
   let Component = this.arch.route.component;
 
   let body = ReactDOMServer.renderToString(
-    <Component context={this.arch.context} />
+    <Component
+        context={this.arch.context}
+        state={this.arch.state}
+    />
   );
 
-  this.body = template.replace('{{root}}', `<script type="application/json" id="${domRoot}-state">${encode(JSON.stringify(this.arch.state))}</script><div id="${domRoot}">${body}</div>`);
+  this.body = template.replace('{{root}}', `<script type="application/json" id="${domRoot}-state">${encode(JSON.stringify(this.arch.state))}</script>\n<div id="${domRoot}">${body}</div>`);
   yield next;
 }

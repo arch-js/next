@@ -42,3 +42,14 @@ export function match(originalUrl, route) {
     route
   };
 }
+
+export function parse(routes, url) {
+  let context;
+  let route = routes.find(({ path }) => context = match(url, path));
+
+  if (route) {
+    return { route, context };
+  } else {
+    return null;
+  }
+}

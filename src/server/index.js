@@ -1,8 +1,7 @@
 import koa from 'koa';
-
 import init from './middleware/init';
-import render from './middleware/render';
 import router from './middleware/router';
+import render from './middleware/render';
 
 /**
  * Instantiate a server given an application.
@@ -11,11 +10,14 @@ import router from './middleware/router';
 
 export default function server(application, options) {
   const app = koa();
-
-  app
-    .use(init(application, options))
-    .use(router)
-    .use(render)
-
-  return app;
+  return {
+    use: (mw) => app.use(mw),
+    start: () => {
+      return app
+        .use(init(application, options))
+        .use(router)
+        .use(render)
+        .listen(options.port)
+    }
+  }
 }
