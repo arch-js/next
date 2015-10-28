@@ -3,6 +3,8 @@ import ReactDOMServer from 'react-dom/server';
 import encode from 'ent/encode';
 
 export default function* renderMiddleware(next) {
+  if (typeof this.arch === 'undefined') throw new Error('Render middleware must be run inside an Arch server.');
+
   let domRoot = this.arch.application.domRoot;
   let template = this.arch.options.template;
   let Component = this.arch.route.component;

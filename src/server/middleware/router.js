@@ -1,7 +1,7 @@
 import { match } from '../../shared/route-parser';
 
 export default function* routerMiddleware(next) {
-  if (typeof this.arch === 'undefined') throw new Error('Must be run inside an Arch server.');
+  if (typeof this.arch === 'undefined') throw new Error('Router middleware must be run inside an Arch server.');
 
   let routes = this.arch.application.routes;
   let context;
