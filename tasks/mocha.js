@@ -5,8 +5,9 @@
 
 export default function unit(gulp, plugins) {
   gulp.task('unit', () => {
-    let { cached, mocha } = plugins;
+    let { cached, mocha, plumber } = plugins;
     return gulp.src('spec/unit/**/*.js')
+      .pipe(plumber())
       .pipe(cached('unit tests'))
       .pipe(mocha());
   });

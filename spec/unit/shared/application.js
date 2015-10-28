@@ -6,10 +6,10 @@ describe('application', () => {
   it('returns a valid application definition', () => {
     const routes = [];
     const start = () => true;
-    const getInitialState = () => ({ message: 'Lorem' });
-    const app = application({ routes: routes, start: start, getInitialState: getInitialState });
+    const state = { message: 'Lorem Ipsum' };
+    const app = application({ routes, start, state });
     assert.equal(app.routes, routes);
     assert.equal(app.start, start);
-    assert.equal(app.getInitialState, getInitialState);
+    assert.equal(app.state, state);
   });
 });

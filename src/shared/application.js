@@ -5,9 +5,10 @@
  * @return {Object} - Application object
  */
 
-export default function application({routes, getInitialState, start}) {
+export default function application({domRoot, routes, state, start}) {
   return {
-    getInitialState: (getInitialState ? getInitialState : () => {}),
+    domRoot,
+    state,
     routes,
     start
   };
