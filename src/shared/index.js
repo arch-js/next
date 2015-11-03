@@ -9,11 +9,11 @@ import route from './route';
 let componentIndex = {};
 
 function getQuery(component) {
-  if (componentIndex[component]) {
-    return componentIndex[component]();
-  }
+  let query = componentIndex[component] || componentIndex[component.constructor];
 
-  throw new Error("No query registered for component: %s", component);
+  if (query) {
+    return query();
+  }
 }
 
 function setQuery(component, query) {
