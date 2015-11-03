@@ -1,19 +1,16 @@
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { match } from '../../shared/route-parser';
+import { parse } from '../../shared/route-parser';
 
-export default function routerMiddleware(routes) {
-  return function* (next) {
-    let context;
-    let route = routes.find(({ path }) => context = match(this.originalUrl, path))
+export default function* routerMiddleware(next) {
+  if (typeof this.arch === 'undefined') throw new Error('Router middleware must be run inside an Arch server.');
 
-    if (route) {
-      let Component = route.component;
-      this.body = ReactDOMServer.renderToString(
-        <Component context={context} />
-      );
-    } else {
-      yield next;
-    }
+  let matched = parse(this.arch.application.routes, this.originalUrl);
+
+  if (matched) {
+    let { route, context } = matched;
+    this.arch.route = route;
+    this.arch.context = context;
+    yield next;
+  } else {
+    this.status = 404;
   }
 }

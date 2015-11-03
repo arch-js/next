@@ -4,8 +4,9 @@ import { assert } from 'chai';
 /** @test {server} */
 describe('Server', () => {
   it('Creates a server instance', () => {
-    const routes = [];
-    const app = server(routes);
+    const application = {};
+    const options = {};
+    const app = server(application, options);
     assert.isDefined(app);
   });
 });

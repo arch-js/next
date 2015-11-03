@@ -30,12 +30,26 @@ export function match(originalUrl, route) {
 
   if (!matches) return false;
 
+  hash = (hash ? hash.slice(1, hash.length) : hash);
+  let params = joinParams(tokens, matches);
+
   return {
-    hash: (hash ? hash.slice(1, hash.length) : hash),
+    hash,
     originalUrl,
-    params: joinParams(tokens, matches),
+    params,
     path,
     query,
     route
   };
+}
+
+export function parse(routes, url) {
+  let context;
+  let route = routes.find(({ path }) => context = match(url, path));
+
+  if (route) {
+    return { route, context };
+  } else {
+    return null;
+  }
 }
