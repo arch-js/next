@@ -2,18 +2,18 @@ import router from '../../../../src/server/middleware/router';
 import { assert } from 'chai';
 import http from 'http';
 import request from 'supertest';
-import koa from 'koa';
+import Koa from 'koa';
 
 /** @test {routerMiddleware} */
 describe('Router Middleware', () => {
   it('Sets arch route to the correct value.', (done) => {
-    const app = koa();
+    const app = new Koa();
     const route = { path: '/route' };
     let actualRoute;
 
     app
-      .use(function* (next) {
-        this.arch = {
+      .use(async (ctx, next) => {
+        ctx.arch = {
           application: {
             routes: [
               route
@@ -21,11 +21,11 @@ describe('Router Middleware', () => {
           }
         }
 
-        yield next;
+        await next();
       })
       .use(router)
-      .use(function* (){
-        actualRoute = this.arch.route;
+      .use(async (ctx) => {
+        actualRoute = ctx.arch.route;
       });
 
     request(http.createServer(app.callback()))
@@ -39,7 +39,7 @@ describe('Router Middleware', () => {
   it('Sets arch context with all parameters.', (done) => {
     let actualContext;
 
-    const app = koa();
+    const app = new Koa();
     const expectedContext = {
       hash: null,
       originalUrl: '/route/bob?hello=world',
@@ -50,18 +50,18 @@ describe('Router Middleware', () => {
     };
 
     app
-      .use(function* (next) {
-        this.arch = {
+      .use(async (ctx, next) => {
+        ctx.arch = {
           application: {
             routes: [{ path: '/route/:name' }]
           }
         }
 
-        yield next;
+        await next();
       })
       .use(router)
-      .use(function* (){
-        actualContext = this.arch.context;
+      .use(async (ctx) => {
+        actualContext = ctx.arch.context;
       });
 
     request(http.createServer(app.callback()))

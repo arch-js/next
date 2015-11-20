@@ -2,12 +2,12 @@ import init from '../../../../src/server/middleware/init';
 import { assert } from 'chai';
 import http from 'http';
 import request from 'supertest';
-import koa from 'koa';
+import Koa from 'koa';
 
 /** @test {initMiddleware} */
 describe('Init Middleware', () => {
   it('Sets state, application and options on the running context', (done) => {
-    const app = koa();
+    const app = new Koa();
     const state = { test: true };
 
     const application = {
@@ -18,14 +18,14 @@ describe('Init Middleware', () => {
 
     app
       .use(init(application, options))
-      .use(function* (next){
-        assert.deepEqual(this.arch, {
+      .use(async (ctx, next) => {
+        assert.deepEqual(ctx.arch, {
           application,
           state,
           options
         });
 
-        yield next;
+        await next();
       });
 
     request(http.createServer(app.callback()))
@@ -34,7 +34,7 @@ describe('Init Middleware', () => {
   });
 
   it('Supports promises in getInitialState', (done) => {
-    const app = koa();
+    const app = new Koa();
     const state = { test: true };
 
     const application = {
@@ -45,9 +45,9 @@ describe('Init Middleware', () => {
 
     app
       .use(init(application, options))
-      .use(function* (next){
-        assert.deepEqual(this.arch.state, state);
-        yield next;
+      .use(async (ctx, next) => {
+        assert.deepEqual(ctx.arch.state, state);
+        await next();
       });
 
     request(http.createServer(app.callback()))

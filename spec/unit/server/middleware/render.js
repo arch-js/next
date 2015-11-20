@@ -3,16 +3,16 @@ import render from '../../../../src/server/middleware/render';
 import { assert } from 'chai';
 import http from 'http';
 import request from 'supertest';
-import koa from 'koa';
+import Koa from 'koa';
 
 /** @test {renderMiddleware} */
 describe('Render Middleware', () => {
   it('Creates a middleware which renders the application with a certain state and template.', (done) => {
-    const app = koa();
+    const app = new Koa();
 
     app
-      .use(function* (next) {
-        this.arch = {
+      .use(async (ctx, next) => {
+        ctx.arch = {
           application: { domRoot: 'myapp' },
           options: { template: '<html><body>{{root}}</body></html>' },
           state: { test: true },
@@ -20,7 +20,7 @@ describe('Render Middleware', () => {
           context: {}
         }
 
-        yield next;
+        await next();
       })
       .use(render);
 

@@ -1,19 +1,19 @@
 export default function init(application, options) {
-  return function* (next) {
+  return async (ctx, next) => {
     let state;
 
     if (typeof application.getInitialState === 'function') {
-      state = yield application.getInitialState();
+      state = await application.getInitialState();
     } else {
       state = {};
     }
 
-    this.arch = {
+    ctx.arch = {
       application,
       state,
       options
     };
 
-    yield next;
+    await next();
   }
 }
