@@ -1,6 +1,6 @@
 {
   "name": "arch-next",
-  "version": "0.0.1-c",
+  "version": "0.0.2",
   "description": "Arch with some bitters and rye.",
   "main": "lib/shared/index.js",
   "scripts": {
