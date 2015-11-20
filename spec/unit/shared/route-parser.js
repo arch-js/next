@@ -1,7 +1,6 @@
 import { match } from '../../../src/shared/route-parser';
 import { assert } from 'chai';
 
-/** @test {match} */
 describe('route-parser/match', () => {
   it('throws a TypeError when route not a string', () => {
     const matcher = () => match('/blog/15', null);

@@ -1,7 +1,6 @@
 import application from '../../../src/shared/application';
 import { assert } from 'chai';
 
-/** @test {application} */
 describe('application', () => {
   it('returns a valid application definition', () => {
     const routes = [];

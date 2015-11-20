@@ -5,7 +5,6 @@ import http from 'http';
 import request from 'supertest';
 import Koa from 'koa';
 
-/** @test {renderMiddleware} */
 describe('Render Middleware', () => {
   it('Creates a middleware which renders the application with a certain state and template.', (done) => {
     const app = new Koa();

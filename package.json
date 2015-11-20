@@ -7,7 +7,6 @@
     "build": "gulp",
     "watch": "gulp watch",
     "test": "gulp test",
-    "docs": "esdoc -c ./esdoc.json",
     "prepublish": "gulp"
   },
   "files": [
@@ -39,8 +38,6 @@
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
     "chai": "^3.2.0",
-    "esdoc": "^0.4.3",
-    "esdoc-es7-plugin": "0.0.3",
     "eslint": "^1.2.1",
     "eslint-config-defaults": "^7.0.1",
     "eslint-plugin-react": "^3.5.1",

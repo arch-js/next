@@ -4,7 +4,6 @@ import http from 'http';
 import request from 'supertest';
 import Koa from 'koa';
 
-/** @test {initMiddleware} */
 describe('Init Middleware', () => {
   it('Sets state, application and options on the running context', (done) => {
     const app = new Koa();

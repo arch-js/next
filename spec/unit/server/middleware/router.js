@@ -4,7 +4,6 @@ import http from 'http';
 import request from 'supertest';
 import Koa from 'koa';
 
-/** @test {routerMiddleware} */
 describe('Router Middleware', () => {
   it('Sets arch route to the correct value.', (done) => {
     const app = new Koa();
